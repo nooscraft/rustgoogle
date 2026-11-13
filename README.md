@@ -56,3 +56,7 @@ hidden-character warning for it.
   directories and would otherwise pick up the root one. If you add a `clippy.toml`
   where there was none, run `cargo clean` first. Cargo replayed old results for me.
 - Tested on macOS only.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
