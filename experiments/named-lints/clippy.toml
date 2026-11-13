@@ -1,0 +1,3 @@
+# The default, written out so this crate does not pick up the repo-root clippy.toml.
+# Change it to false and wrong_self_convention also flags the public into_vec(&self).
+avoid-breaking-exported-api = true

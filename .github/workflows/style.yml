@@ -1,0 +1,30 @@
+name: style
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  STABLE: "1.100.0"
+  NIGHTLY: "nightly-2026-11-12"
+
+jobs:
+  style:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install toolchains
+        run: |
+          rustup toolchain install "$STABLE" --profile minimal --component clippy
+          rustup toolchain install "$NIGHTLY" --profile minimal --component rustfmt
+
+      - name: Format (nightly rustfmt, for the unstable options)
+        run: cargo +"$NIGHTLY" fmt --check
+
+      - name: Lint (stable clippy)
+        run: cargo +"$STABLE" clippy --all-targets -- -D warnings
+
+      - name: Test (stable)
+        run: cargo +"$STABLE" test

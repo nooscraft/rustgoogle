@@ -1,0 +1,8 @@
+[package]
+name = "omitted-patterns"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+[lints.rust]
+non_exhaustive_omitted_patterns = "warn"

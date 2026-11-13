@@ -1,0 +1,11 @@
+[package]
+name = "lazy-messages"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[lints.clippy]
+unwrap_used = "warn"
+missing_assert_message = "warn"
+undocumented_unsafe_blocks = "warn"

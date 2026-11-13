@@ -1,0 +1,18 @@
+[package]
+name = "gstyle"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[lints.rust]
+missing_docs = "warn"
+
+[lints.clippy]
+wildcard_imports = "warn"
+exhaustive_enums = "warn"
+unwrap_used = "warn"
+missing_assert_message = "warn"
+missing_panics_doc = "warn"
+string_add = "warn"
+undocumented_unsafe_blocks = "warn"

@@ -1,0 +1,9 @@
+# Google: "Use of `panic::catch_unwind` is prohibited in first-party Rust code."
+disallowed-methods = [
+    { path = "std::panic::catch_unwind", reason = "prohibited in first-party code by the style guide" },
+]
+# Google prefers expect over unwrap, but unwrap in tests is fine.
+allow-unwrap-in-tests = true
+# The default (true) keeps wrong_self_convention and 18 other lints quiet
+# when the fix would change a public API.
+avoid-breaking-exported-api = false
